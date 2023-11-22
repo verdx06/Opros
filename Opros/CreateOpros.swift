@@ -15,6 +15,9 @@ struct CreateOpros: View {
     @State private var displayedText: [String] = []
     @State private var isNextViewActive = false
     
+    @EnvironmentObject var nameOpros: UserNameOpros
+    @Environment(\.presentationMode) var presentation
+    
     var body: some View {
         NavigationView {
             ScrollView{
@@ -60,10 +63,10 @@ struct CreateOpros: View {
                 }
                 
                 
+                
                 Button(action: {
-                    self.viewtext = self.text
-                    self.displayedText = self.textFields
-                    self.isNextViewActive = true
+                    self.nameOpros.name = self.text
+                    self.presentation.wrappedValue.dismiss()
                 }, label: {
                     Text("save".uppercased())
                         .padding()
@@ -73,21 +76,21 @@ struct CreateOpros: View {
                         .font(.headline)
                         .clipShape(.capsule(style: .continuous))
                 })
-                Text(viewtext)
-                    .font(.largeTitle)
-                ForEach(displayedText, id: \.self) { text in
-                    Button {
-                        //
-                    } label: {
-                        Text(text)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
-                    
-                }
+//                Text(viewtext)
+//                    .font(.largeTitle)
+//                ForEach(displayedText, id: \.self) { text in
+//                    Button {
+//                        //
+//                    } label: {
+//                        Text(text)
+//                            .padding()
+//                            .frame(maxWidth: .infinity)
+//                            .background(Color.blue)
+//                            .foregroundColor(.white)
+//                            .cornerRadius(10)
+//                    }
+//                    
+//                }
                 
                 Spacer()
             }

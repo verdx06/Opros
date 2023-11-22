@@ -7,7 +7,14 @@
 
 import SwiftUI
 
+class UserNameOpros: ObservableObject {
+    @Published var name: String = ""
+}
+
 struct Main: View {
+    
+    @ObservedObject var nameOpros = UserNameOpros()
+    
     var body: some View {
         NavigationView {
             ScrollView{
@@ -26,9 +33,11 @@ struct Main: View {
                         }
                     }
                     Spacer()
+                    Text("\(nameOpros.name)")
                 } .navigationTitle("Главная страница")
             }
         }
+        .environmentObject(nameOpros)
     }
 }
 
