@@ -9,9 +9,11 @@ import SwiftUI
 
 struct OprosView: View {
     
-    @State private var text = ""
+    @State private var text: String = ""
+    @State private var viewtext: String = ""
     @State private var textFields: [String] = [""] // Массив для хранения значений текстовых полей
-    @State private var displayedText: String = "" // Для отображения значений на экране
+    @State private var displayedText: [String] = [] // Для отображения значений на экране
+    @State private var selectedAnswer: String? = nil // Для хранения выбранного ответа
     
     var body: some View {
         NavigationView {
@@ -50,45 +52,52 @@ struct OprosView: View {
                                 }
                             }
                         }
-                        
-                        ForEach(0..<textFields.count, id: \.self) { index in
-                            TextField("Введите вариант...", text: self.$textFields[index])
-                                .padding()
-                                .background(Color.gray.opacity(0.2).cornerRadius(10))
-                        }
-                    } //поля
+                    }
                     
-                    Button(action: {
+                    ForEach(0..<textFields.count, id: \.self) { index in
+                        TextField("Введите вариант...", text: self.$textFields[index])
+                            .padding()
+                            .background(Color.gray.opacity(0.2).cornerRadius(10))
+                    }
+                } //поля
+                Button(action: {
+                    self.viewtext = self.text
+                    self.displayedText = self.textFields
+                }, label: {
+                    Text("save".uppercased())
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(.blue)
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .clipShape(.capsule(style: .continuous))
+                })
+                Text(viewtext)
+                    .font(.largeTitle)
+                ForEach(displayedText, id: \.self) { text in
+                    Button {
                         //
-                    }, label: {
-                        Text("Save".uppercased())
+                    } label: {
+                        Text(text)
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(.blue)
+                            .background(Color.blue)
                             .foregroundColor(.white)
-                            .font(.headline)
-                            .clipShape(.capsule(style: .continuous))
-                    })
+                            .cornerRadius(10)
+                    }
                     
-                    Spacer()
                 }
-                .padding()
-                .navigationTitle("Создание опроса")
+                
+                Spacer()
             }
+            .padding()
+            .navigationTitle("Создание опроса")
         }
     }
 }
 
-struct BordTextField: TextFieldStyle {
-    
-    func _body(configuration: TextField<Self._Label>) -> some View {
-        HStack {
-            configuration
-        }
-        .padding(.leading)
-        .foregroundColor(.black)
-    }
-}
+
+
 
 
 
