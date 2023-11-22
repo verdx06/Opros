@@ -12,30 +12,33 @@ struct ContentView: View {
     
     @State var selectTab = "Main"
     
-    let tabs = ["Main","Opros","History"]
+    let tabs = ["Main","History","Settings"]
     
     init() {
         UITabBar.appearance().isHidden = true
     }
     
     var body: some View {
-        ZStack (alignment: .bottom) {
-            TabView (selection: $selectTab){
-                Main()
-                    .tag("Main")
-                OprosView()
-                    .tag("Opros")
-                history()
-                    .tag("History")
-            }
-            
-            HStack {
-                ForEach(tabs, id: \.self) {tab in
-                    TabBarItem(tab: tab, selected: $selectTab)
+        NavigationView {
+            ZStack (alignment: .bottom) {
+                TabView (selection: $selectTab){
+                    Main()
+                        .tag("Main")
+                    History()
+                        .tag("History")
+                    Settings()
+                        .tag("Settings")
                 }
-            } .padding(.vertical, 20)
-                .frame(maxWidth: .infinity)
-                .background(Color.background)
+                
+                HStack {
+                    ForEach(tabs, id: \.self) {tab in
+                        TabBarItem(tab: tab, selected: $selectTab)
+                    } 
+                }
+                .padding(.vertical, 20)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.background)
+            }
         }
     }
 }
@@ -56,9 +59,9 @@ struct TabBarItem: View{
                         .resizable()
                         .frame(width: 30, height: 30)
                     if selected == tab {
-                        Text(tab)
-                            .font(.system(size: 14))
-                            .foregroundColor(.black)
+                            Text(tab)
+                                .font(.system(size: 14))
+                                .foregroundColor(.black)
                     }
                 }
             })

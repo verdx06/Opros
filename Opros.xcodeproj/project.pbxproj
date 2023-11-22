@@ -14,9 +14,10 @@
 		216110D72B0D2F73008509EC /* OprosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216110D62B0D2F73008509EC /* OprosTests.swift */; };
 		216110E12B0D2F73008509EC /* OprosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216110E02B0D2F73008509EC /* OprosUITests.swift */; };
 		216110E32B0D2F73008509EC /* OprosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216110E22B0D2F73008509EC /* OprosUITestsLaunchTests.swift */; };
-		216110F02B0D2FDD008509EC /* history.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216110EF2B0D2FDD008509EC /* history.swift */; };
-		216110F42B0D3020008509EC /* OprosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216110F32B0D3020008509EC /* OprosView.swift */; };
 		216110F62B0D30A2008509EC /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216110F52B0D30A2008509EC /* Main.swift */; };
+		21B655FF2B0E5C840055870A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B655FE2B0E5C840055870A /* Settings.swift */; };
+		21B656012B0E61AA0055870A /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B656002B0E61AA0055870A /* History.swift */; };
+		21B656032B0E644D0055870A /* CreateOpros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B656022B0E644D0055870A /* CreateOpros.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,9 +48,10 @@
 		216110DC2B0D2F73008509EC /* OprosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OprosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		216110E02B0D2F73008509EC /* OprosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OprosUITests.swift; sourceTree = "<group>"; };
 		216110E22B0D2F73008509EC /* OprosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OprosUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		216110EF2B0D2FDD008509EC /* history.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = history.swift; sourceTree = "<group>"; };
-		216110F32B0D3020008509EC /* OprosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OprosView.swift; sourceTree = "<group>"; };
 		216110F52B0D30A2008509EC /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		21B655FE2B0E5C840055870A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		21B656002B0E61AA0055870A /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		21B656022B0E644D0055870A /* CreateOpros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOpros.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +105,9 @@
 				216110C52B0D2F70008509EC /* OprosApp.swift */,
 				216110C72B0D2F70008509EC /* ContentView.swift */,
 				216110F52B0D30A2008509EC /* Main.swift */,
-				216110F32B0D3020008509EC /* OprosView.swift */,
-				216110EF2B0D2FDD008509EC /* history.swift */,
+				21B656002B0E61AA0055870A /* History.swift */,
+				21B655FE2B0E5C840055870A /* Settings.swift */,
+				21B656022B0E644D0055870A /* CreateOpros.swift */,
 				216110C92B0D2F72008509EC /* Assets.xcassets */,
 				216110CB2B0D2F72008509EC /* Preview Content */,
 			);
@@ -267,10 +270,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				216110F62B0D30A2008509EC /* Main.swift in Sources */,
-				216110F42B0D3020008509EC /* OprosView.swift in Sources */,
 				216110C82B0D2F70008509EC /* ContentView.swift in Sources */,
-				216110F02B0D2FDD008509EC /* history.swift in Sources */,
 				216110C62B0D2F70008509EC /* OprosApp.swift in Sources */,
+				21B656032B0E644D0055870A /* CreateOpros.swift in Sources */,
+				21B655FF2B0E5C840055870A /* Settings.swift in Sources */,
+				21B656012B0E61AA0055870A /* History.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
